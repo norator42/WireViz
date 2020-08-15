@@ -317,10 +317,6 @@ Both connectors and cables accept including an image with a caption within their
 image:
   src: <path>        # path to the image file
   # optional parameters:
-  caption: <str>     # text to display below the image
-  width: <int>       # range: 1~65535; unit: ???
-  height: <int>      # range: 1~65535; unit: ???
-  fixedsize: <bool>  # ???
   scale: <str>       # scaling behavior; possible values:
                      # false   does not scale the image
                      # true    scale image proportionally
@@ -328,6 +324,10 @@ image:
                      # width   scale image proportionally to given width
                      # height  scale image proportionally to given height
                      # both    resize to given width and height
+  width: <int>       # range: 1~65535; unit: ???
+  height: <int>      # range: 1~65535; unit: ???
+  fixedsize: <bool>  # ???
+  caption: <str>     # text to display below the image
 ```
 
 
