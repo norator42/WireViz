@@ -297,18 +297,14 @@ Both connectors and cables accept including an image with a caption within their
 image:
   src: <path>        # path to the image file
   # optional parameters:
-  scale: <str>       # scaling behavior; possible values:
-                     # false   does not scale the image
-                     # true    scale image proportionally
-                     #         to fit within given max. width and height
-                     # width   scale image proportionally to given width
-                     # height  scale image proportionally to given height
-                     # both    resize to given width and height
-  width: <int>       # range: 1~65535; unit: ???
-  height: <int>      # range: 1~65535; unit: ???
-  fixedsize: <bool>  # ???
   caption: <str>     # text to display below the image
+  width: <int>       # range: 1~65535; unit: points
+  height: <int>      # range: 1~65535; unit: points
+  # if only one dimension (width/height) is specified, the image is scaled proportionally.
+  # if both width and height are specified, the image is stretched to fit.
 ```
+
+For more fine grained control over the image parameters, please see [`advanced_image_usage.md`](advanced_image_usage.md).
 
 
 ## Multiline strings
