@@ -21,12 +21,12 @@ WireViz is a tool for easily documenting cables, wiring harnesses and connector 
   * Optionally outputs colors as abbreviation (e.g. 'YE'), full name (e.g. 'yellow') or hex value (e.g. '#ffff00'), with choice of UPPER or lower case
 * Auto-generates standard wire color schemes and allows custom ones if needed
   * [DIN 47100](https://en.wikipedia.org/wiki/DIN_47100) (WT/BN/GN/YE/GY/PK/BU/RD/BK/VT/...)
-  * [IEC 62](https://en.wikipedia.org/wiki/Electronic_color_code#Color_band_system)   (BN/RD/OR/YE/GN/BU/VT/GY/WT/BK/...)
+  * [IEC 60757](https://en.wikipedia.org/w/index.php?title=IEC_60757)   (BN/RD/OR/YE/GN/BU/VT/GY/WT/BK/...)
   * [25 Pair Color Code](https://en.wikipedia.org/wiki/25-pair_color_code#Color_coding) (BUWH/WHBU/OGWH/WHOG/GNWH/WHGN/BNWH/...)
   * [TIA/EIA 568 A/B](https://en.wikipedia.org/wiki/TIA/EIA-568#Wiring)  (Subset of 25-Pair, used in CAT-5/6/...)
 * Understands wire gauge in mm² or AWG
   * Optionally auto-calculates equivalent gauge between mm² and AWG
-* Allows more than one connector per side, as well as loopbacks
+* Is suitable for both very simple cables, and more complex harnesses.
 * Allows for easy-autorouting for 1-to-1 wiring
 * Generates BOM (Bill of Materials)
 
