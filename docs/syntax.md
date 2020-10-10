@@ -49,7 +49,6 @@ additional_bom_items:  # custom items to add to BOM
 
   # pinout information
   # at least one of the following must be specified
-  # if more than one is specified, list lenghts must match pincount, and each other
   pincount: <int>    # if omitted, is set to length of specified list(s)
   pins: <List>       # if omitted, is autofilled with [1, 2, ..., pincount]
   pinlabels: <List>  # if omitted, is autofilled with blanks
@@ -215,12 +214,13 @@ For connectors with `autogenerate: true`, a new instance, with auto-generated de
 
 ## BOM items
 
-Connectors (both regular, and auto-generated), cables, and wires of a bundle are automatically added to the BOM,
-unless the `ignore_in_bom` attribute is set to `true`.
+Connectors (both regular, and auto-generated), cables, and wires of a bundle are automatically added to the BOM.
+
+<!-- unless the `ignore_in_bom` attribute is set to `true` (#115) -->
 
 Additional BOM entries can be generated in the sections marked `<bom-item>` above.
 
-<!-- :warning: BOM items inside connectors/cables are not implemented yet, but should be soon (#50) -->
+<!-- BOM items inside connectors/cables are not implemented yet, but should be soon (#50) -->
 
 ```yaml
 -
@@ -280,7 +280,7 @@ Supported color codes:
 
   ![##ffffff](https://via.placeholder.com/15/ffffff/000000?text=+) ![##895956](https://via.placeholder.com/15/895956/000000?text=+) ![##00ff00](https://via.placeholder.com/15/00ff00/000000?text=+) ![##ffff00](https://via.placeholder.com/15/ffff00/000000?text=+) ![##999999](https://via.placeholder.com/15/999999/000000?text=+) ![##ff66cc](https://via.placeholder.com/15/ff66cc/000000?text=+) ![##0066ff](https://via.placeholder.com/15/0066ff/000000?text=+) ![##ff0000](https://via.placeholder.com/15/ff0000/000000?text=+) ![##000000](https://via.placeholder.com/15/000000/000000?text=+) ![##8000ff](https://via.placeholder.com/15/8000ff/000000?text=+) ...
 
-- `IEC` for [IEC 62](https://en.wikipedia.org/wiki/Electronic_color_code#Color_band_system) ("ROY G BIV")
+- `IEC` for [IEC 60757](https://en.wikipedia.org/wiki/Electronic_color_code#Color_band_system) ("ROY G BIV")
 
   ![##895956](https://via.placeholder.com/15/895956/000000?text=+) ![##ff0000](https://via.placeholder.com/15/ff0000/000000?text=+) ![##ff8000](https://via.placeholder.com/15/ff8000/000000?text=+) ![##ffff00](https://via.placeholder.com/15/ffff00/000000?text=+) ![##00ff00](https://via.placeholder.com/15/00ff00/000000?text=+) ![##0066ff](https://via.placeholder.com/15/0066ff/000000?text=+) ![##8000ff](https://via.placeholder.com/15/8000ff/000000?text=+) ![##999999](https://via.placeholder.com/15/999999/000000?text=+) ![##ffffff](https://via.placeholder.com/15/ffffff/000000?text=+) ![##000000](https://via.placeholder.com/15/000000/000000?text=+) ...
 
@@ -309,8 +309,13 @@ For more fine grained control over the image parameters, please see [`advanced_i
 
 ## Multiline strings
 
-Connectors accept multiline strings in the `type`, `subtype` and `notes` attributes.
-Cables accept multiline strings in the `type` and `notes` attributes.
+The following attributes accept multiline strings:
+- `type`
+- `subtype` (connectors only)
+- `notes`
+- `manufacturer`
+- `mpn`
+- `image.caption`
 
 ### Method 1
 
@@ -336,4 +341,4 @@ See [yaml-multiline.info](https://yaml-multiline.info/) for more information.
 
 ## Inheritance
 
-Add link to YAML spec.
+[YAML anchors and references](https://blog.daemonl.com/2016/02/yaml.html) are useful for defining and referencing information that is used more than once in a file, e.g. when using defining multiple connectors of the same type or family. See [Demo 02](../examples/demo02.yml) for an example.
